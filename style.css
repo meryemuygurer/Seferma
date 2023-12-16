@@ -46,14 +46,29 @@ a{
 nav{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 50px;
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(239, 239, 239);
+    box-shadow: 0 1px 3px rgb(222, 221, 221);
 
     ul{
         gap: 50px;
     }
 
+    li{
+        border-radius: 8px;
+        background-color: #c90005;
+    }
+
+    li:hover{
+        background-color: #e61418;
+    }
+
     a{
-        color: black;
+        color: white;
+        padding: 8px 14px;
+        display: block;
     }
 
     .logo img{
@@ -72,7 +87,43 @@ nav{
         h1{
             font-size: 56px;
         }
+
+        h3{
+            font-weight: 300;
+        }
     }
 
+}
+.location-search-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    
+    .location-search-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        width: 90%;
+        height: 500px;
+        background-color: rgb(225, 225, 225);
+    }
+}
+
+.our-cars{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .our-cars-element{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    ul{
+        list-style: circle;
+    }
 }
 
