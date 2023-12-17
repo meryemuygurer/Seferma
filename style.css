@@ -161,9 +161,52 @@ nav{
             padding: 5px;
         }
     }
+}
 
+.activities-regions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0;
 
+    .activites-regions-row{
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
 
+    .activity-elements-div{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .activity-element{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(208, 206, 206);
+        border-radius: 16px 16px 15px 15px;
+        padding-bottom: 10px;
+
+        h3{
+            padding: 10px 5px;
+            font-weight: 300;
+        }
+    }
+
+    .activity-element-img img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+        border-bottom: 2px solid #c90005;
+    }
+    
+    .region-option{
+        width: 100%;
+    }
 
 }
+
+
 
