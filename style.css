@@ -21,192 +21,288 @@ a{
     display: flex;
 }
 
+/* Topbar Area */
 .topbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #c90005;
     padding: 10px 50px;
-
-    ul{
-        gap: 10px;
-    }
-
-    .thin a{
-        font-weight: 100 !important;
-    }
-
-    a{
-        color: white ;
-        font-size: 15px;
-        font-weight: 300;
-    }
 }
 
-nav{
+.topbar ul{
+    gap: 10px;
+}
+
+.topbar .thin a{
+    font-weight: 100 !important;
+}
+
+.topbar a{
+    color: white ;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+.header-nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: rgb(246, 246, 246);
-    border: 1px solid rgb(239, 239, 239);
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid rgb(239, 239, 239);
     box-shadow: 0 1px 3px rgb(222, 221, 221);
-
-    ul{
-        gap: 50px;
-    }
-
-    li{
-        border-radius: 8px;
-        background-color: #c90005;
-    }
-
-    li:hover{
-        background-color: #e61418;
-    }
-
-    a{
-        color: white;
-        padding: 8px 14px;
-        display: block;
-    }
-
-    .logo img{
-        width: 150px;
-    }
+    transition: 0.6s;
+    z-index: 10000;
 }
+
+.header-nav.sticky{
+    padding: 10px 50px;
+    top: 0;
+    background-color: rgb(246, 246, 246);
+}
+
+.header-nav ul{
+    gap: 50px;
+}
+
+.header-nav li{
+    border-radius: 8px;
+    background-color: #c90005;
+}
+
+.header-nav li:hover{
+    background-color: #e61418;
+}
+
+.header-nav a{
+    color: white;
+    padding: 8px 14px;
+    display: block;
+}
+
+nav .logo img{
+    width: 150px;
+}
+
+/* Banner Area */
 
 .banner{
     display: flex;
     justify-content: center;
-    padding-top: 150px;
-
-    .banner-text{
-        text-align: center;
-
-        h1{
-            font-size: 56px;
-        }
-
-        h3{
-            font-weight: 300;
-        }
-    }
-
+    padding-top: 200px;
 }
+
+.banner-text{
+    text-align: center;    
+}
+
+.banner-text h1{
+    font-size: 56px;
+}
+
+.banner-text h3{
+    font-weight: 300;
+}
+
+/* Location Search Area */
+
 .location-search-area{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 0;
-    
-    .location-search-div{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 50px;
-        width: 90%;
-        height: 500px;
-        background-color: rgb(225, 225, 225);
-    }
+    padding: 100px 50px;
 }
 
-.our-cars{
+.location-search-div{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-
-    .our-cars-element{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 300px;
-        border: 1px solid rgb(175, 175, 175);
-        border-radius: 18px 18px 15px 15px;
-
-        .our-cars-img img{
-            width: 100%;
-            height: 167px;
-            object-fit: cover;
-        }
-
-        .our-cars-header{
-            background-color: #c90005;
-            text-align: center;
-            color: white;
-            padding: 5px 0;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .our-cars-attributes a{
-            color: black;
-        }
-
-        .our-cars-attributes img{
-            margin: 0 15px;
-        }
-
-        .our-cars-attributes li{
-            display: flex;
-            align-items: center;
-        }
-    }
-
-    ul{
-        list-style: none;
-        list-style-position: inside;
-        padding: 20px 0;
-
-        li{
-            padding: 5px;
-        }
-    }
+    justify-content: center;
+    font-size: 50px;
+    width: 100%;
+    height: 500px;
+    background-color: rgb(225, 225, 225);
 }
+
+/* Our Cars Area */
+
+.our-cars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 20px; /* İki sütun arasındaki boşluk */
+    padding: 0 50px;
+}
+
+.our-cars ul{
+    list-style: none;
+    list-style-position: inside;
+    padding: 20px 0;
+}
+
+.our-cars ul li{
+    padding: 5px;
+}
+
+.our-cars-element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 18px 18px 15px 15px;
+}
+
+.our-cars-img{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    padding-right: 20px;
+}
+
+.our-cars-img img{
+    width: 100%;
+    height: auto;
+}
+
+.our-cars-header{
+    background-color: #c90005;
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    border-radius: 15px 15px 0 0;
+}
+
+.our-cars-attributes a{
+    color: black;
+}
+
+.our-cars-attributes img{
+    margin: 0 15px;
+}
+
+.our-cars-attributes li{
+    display: flex;
+    align-items: center;
+}
+
+.our-cars-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-cars-button{
+    background-color: #c90005;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.our-cars-button:hover{
+    background-color: #e61418;
+}
+
+.our-cars-button a{
+    color: white;
+}
+
+.our-cars-button h3{
+    font-weight: 300;
+}
+
+
+/* Activities Regions Area */
 
 .activities-regions{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 0;
-
-    .activites-regions-row{
-        display: flex;
-        justify-content: center;
-        width: 90%;
-    }
-
-    .activity-elements-div{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 50px;
-    }
-
-    .activity-element{
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgb(208, 206, 206);
-        border-radius: 16px 16px 15px 15px;
-        padding-bottom: 10px;
-
-        h3{
-            padding: 10px 5px;
-            font-weight: 300;
-        }
-    }
-
-    .activity-element-img img{
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 15px 15px 0 0;
-        border-bottom: 2px solid #c90005;
-    }
-    
-    .region-option{
-        width: 100%;
-    }
-
+    padding: 100px 50px;
 }
 
+.activities-header{
+    margin-bottom: 20px;
+}
 
+.activites-regions-element{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* İki sütun arasındaki boşluk */
+    padding: 0 50px;
+}
 
+.activity-element{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(208, 206, 206);
+    border-radius: 16px 16px 15px 15px;
+    padding-bottom: 10px;
+}
+
+.activity-element h3{
+    padding: 10px 5px;
+    font-weight: 300;
+}
+
+.activity-element-img img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    border-bottom: 2px solid #c90005;
+}
+
+.regions-option{
+    display: flex;
+    align-items: center;  
+    margin-bottom: 20px;
+}
+
+.regions-option h3{
+    color: #c90005;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.regions-option button{
+    border: none;
+    background-color: transparent;
+    margin: 8px 14px;
+    position: relative;
+    cursor: pointer;
+}
+
+.regions-option button::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+}
+
+.regions-option button:hover::after{
+    width: 100%;
+    transition: 0.6s;
+}
+
+.regions-options{
+    display: flex;
+    justify-content: center;
+    width: 100%;    
+}
+
+#option1 {
+    color: black;
+    font-weight: bold;
+}
+
+/* Diğer seçeneklerin stilini belirtin */
+#option2, #option3, #option4 {
+    color: gray;
+}

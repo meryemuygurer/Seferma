@@ -35,7 +35,7 @@
                 </ul>
             </div>
         </div>
-        <nav>
+        <nav class="header-nav">
             <div class="logo">
                 <a href="index.html"><img src="./images/seferma-logo.png" ></a>
             </div>
@@ -67,53 +67,100 @@
 
     <!-- Our Cars Area -->
     <section class="our-cars">
+        
         <div class="our-cars-element sprinter">
             <div class="our-cars-header"><h3>Mercedes Sprinter</h3></div>
-            <div class="our-cars-img">
-                <img src="./images/mercedes-sprinter.jpeg" alt="">
+            <div class="our-cars-row">
+                <div class="our-cars-attributes">
+                    <ul>
+                        <li><img src="./images/points.png" alt="" width="10px"> VIP Transfer</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Wi-Fi</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Güvenli Sürüş</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Konforlu Yolculuk</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> 5 + 1 Kişi</li>
+                    </ul>
+                </div>
+                <div class="our-cars-img">
+                    <img src="./images/sprinter-toleft.png" alt="">
+                </div>
+            </div>  
+            <div class="our-cars-button">
+                <a href="#"> <h3>Aracı Seç</h3></a>
+
             </div>
-            <div class="our-cars-attributes">
-                <ul>
-                    <li><img src="./images/points.png" alt="" width="10px"> VIP Transfer</li>
-                    <li><img src="./images/points.png" alt="" width="10px"> Wi-Fi</li>
-                    <li><img src="./images/points.png" alt="" width="10px"> Güvenli Sürüş</li>
-                </ul>
-            </div>
-            <div class="our-cars-button"></div>
         </div>
         <div class="our-cars-element vito">
             <div class="our-cars-header"><h3>Mercedes Vito</h3></div>
-            <div class="our-cars-img">
-                <img src="./images/mercedes-vito.jpeg" alt="">
+            <div class="our-cars-row">
+                <div class="our-cars-attributes">
+                    <ul>
+                        <li><img src="./images/points.png" alt="" width="10px"> VIP Transfer</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Wi-Fi</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Güvenli Sürüş</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Konforlu Yolculuk</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> 16 + 1 Kişi</li>
+                    </ul>
+                </div>
+                <div class="our-cars-img">
+                    <img src="./images/vito-toleft.png" alt="">
+                </div>
             </div>
-            <div class="our-cars-attributes">
-                <ul>
-                    <li><img src="./images/points.png" alt="" width="10px"> VIP Transfer</li>
-                    <li><img src="./images/points.png" alt="" width="10px"> Wi-Fi</li>
-                    <li><img src="./images/points.png" alt="" width="10px"> Güvenli Sürüş</li>
-                </ul>
+            <div class="our-cars-button">
+                <a href="#"> <h3>Aracı Seç</h3></a>
             </div>
-            <div class="our-cars-button"></div>
         </div>
         <div class="our-cars-element otokar">
             <div class="our-cars-header"><h3>Otokar ?</h3></div>
-            <div class="our-cars-img">
-                <img src="./images/mercedes-vito.jpeg" alt="">
+            <div class="our-cars-row">
+                <div class="our-cars-attributes">
+                    <ul>
+                        <li><img src="./images/points.png" alt="" width="10px"> VIP Transfer</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Wi-Fi</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Güvenli Sürüş</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> Konforlu Yolculuk</li>
+                        <li><img src="./images/points.png" alt="" width="10px"> 7 + 1 Kişi</li>
+
+                    </ul>
+                </div>
+                <div class="our-cars-img">
+                    <img src="./images/vito-toleft.png" alt="">
+                </div>
             </div>
-            <div class="our-cars-attributes">
-                <ul>
-                    <li><img src="./images/points.png" alt="" width="10px"> VIP Transfer</li>
-                    <li><img src="./images/points.png" alt="" width="10px"> Wi-Fi</li>
-                    <li><img src="./images/points.png" alt="" width="10px"> Güvenli Sürüş</li>
-                </ul>
+            <div class="our-cars-button" onclick="">
+                <a href="#"> <h3>Aracı Seç</h3></a>
             </div>
-            <div class="our-cars-button"></div>
         </div>
     </section>
+
+        <!-- Activities Area -->
     <section class="activities-regions">
+        <div class="activities-header">
             <h1>AKTİVİTELERİMİZ</h1>
-        <div class="activites-regions-row">
-            <div class="activity-elements-div">
+        </div>
+        <div class="regions-options">
+            <div class="regions-option istanbul">
+                <button id="option1" onclick="selectOption(1)">
+                    <h3>İstanbul Aktiviteleri</h3>
+                </button>
+            </div>
+            <div class="regions-option karadeniz">
+                <button id="option2" onclick="selectOption(2)">
+                    <h3>Karadeniz Aktiviteleri</h3>
+                </button>
+            </div>
+            <div class="regions-option ege">
+                <button id="option3" onclick="selectOption(3)">
+                    <h3>Ege Aktiviteleri</h3>
+                </button>
+            </div>
+            <div class="regions-option kapadokya">
+                <button id="option4" onclick="selectOption(4)">
+                    <h3>Kapadokya Aktiviteleri</h3>
+                </button>
+            </div>
+        </div>
+                
+        <div class="activites-regions-element">
                 <div class="activity-element">
                     <div class="activity-element-img">
                         <img src="./images/karadeniz-1.jpeg" alt="">
@@ -143,19 +190,11 @@
                         <img src="./images/karadeniz-4.jpeg" alt="">
                     </div>
                     <div class="activity-element-desc">
-                        <h3>Raftin</h3>
+                        <h3>Rafting</h3>
                     </div>
                 </div>
-            </div>
-            <div class="regions-options">
-                <div class="regions-option istanbul"><h3>İstanbul Aktiviteleri</h3></div>
-                <div class="regions-option karadeniz"><h3>Karadeniz Aktiviteleri</h3></div>
-                <div class="regions-option ege"><h3>Ege Aktiviteleri</h3></div>
-                <div class="regions-option kapadokya"><h3>Kapadokya Aktiviteleri</h3></div>
-            </div>
         </div>
-
     </section>
-    
+    <script src="script.js"></script>
 </body>
 </html>
