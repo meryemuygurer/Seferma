@@ -41,7 +41,7 @@
             </div>
             <div class="header-items">
                 <ul class="header-items-ul">
-                    <li class="homepage header-items-li"><a href="https://seferma.com/">Anasayfa</a></li>
+                    <li class="homepage header-items-li"><a href="index.html">Anasayfa</a></li>
                     <li class="about header-items-li"><a href="#">Hakkımızda</a></li>
                     <li class="services header-items-li"><a href="#">Hizmetlerimiz</a></li></li>
                     <li class="referances header-items-li"><a href="#">Referanslarımız</a></li></li>
@@ -62,7 +62,29 @@
 
     <!-- Location Search Area -->
     <section class="location-search-area">
-        <div class="location-search-div">Burası Map Kısmı</div>
+        <div class="travel-selection">
+            <div class="transfer" id="options1"><img width="18" height="18" src="https://img.icons8.com/android/24/data-in-both-directions.png" alt="data-in-both-directions"/><span>Transfer</span></div>
+            <div class="hourly" id="options2"><img width="18" height="18" src="https://img.icons8.com/ios/50/today.png" alt="today"/><span>Günlük</span></div>
+            <div class="daily" id="options3"><img width="18" height="18" src="https://img.icons8.com/ios/50/future.png" alt="future"/><span>Saatlik</span></div>
+        </div>
+        <div class="address-input">
+            <div class="from-where">
+                <p>Nereden ?</p>
+                <input type="text" name="" id="adresInput1" class="adresInput" placeholder="Tam Adres Giriniz...">
+            </div>
+            <div class="to-where">
+                <p>Nereye ?</p>
+                <input type="text" name="" id="adresInput2" class="adresInput" placeholder="Tam Adres Giriniz...">
+            </div>
+            <div class="date-and-hour">
+                <p>Gidiş Tarihi</p>
+                <input type="date" value="" name="" id="tarihSec">
+            </div>
+            <div class="number-of-passengers">
+                <p>Yolcu Sayısı</p>
+                <input type="number" name="" id="" placeholder="Kişi Sayısı Giriniz...">
+            </div>
+        </div>
     </section>
 
     <!-- Our Cars Area -->
@@ -84,9 +106,8 @@
                     <img src="./images/sprinter-toleft.png" alt="">
                 </div>
             </div>  
-            <div class="our-cars-button">
+            <div class="select-button">
                 <a href="#"> <h3>Aracı Seç</h3></a>
-
             </div>
         </div>
         <div class="our-cars-element vito">
@@ -105,7 +126,7 @@
                     <img src="./images/vito-toleft.png" alt="">
                 </div>
             </div>
-            <div class="our-cars-button">
+            <div class="select-button">
                 <a href="#"> <h3>Aracı Seç</h3></a>
             </div>
         </div>
@@ -126,7 +147,7 @@
                     <img src="./images/vito-toleft.png" alt="">
                 </div>
             </div>
-            <div class="our-cars-button" onclick="">
+            <div class="select-button" onclick="">
                 <a href="#"> <h3>Aracı Seç</h3></a>
             </div>
         </div>
@@ -168,13 +189,19 @@
                     <div class="activity-element-desc">
                         <h3>Yayla Turu</h3>
                     </div>
+                    <div class="activity-select-button">
+                        <a href="#"> <h3>İncele</h3></a>
+                    </div>
                 </div>
                 <div class="activity-element">
                     <div class="activity-element-img">
                         <img src="./images/karadeniz-2.jpeg" alt="">
                     </div>
                     <div class="activity-element-desc">
-                        <h3>Kahvaltı</h3>
+                        <h3>Ata Binme</h3>
+                    </div>
+                    <div class="activity-select-button">
+                        <a href="#"> <h3>İncele</h3></a>
                     </div>
                 </div>
                 <div class="activity-element">
@@ -182,7 +209,10 @@
                         <img src="./images/karadeniz-3.jpeg" alt="">
                     </div>
                     <div class="activity-element-desc">
-                        <h3>Ata Binme</h3>
+                        <h3>Kahvaltı</h3>
+                    </div>
+                    <div class="activity-select-button">
+                        <a href="#"> <h3>İncele</h3></a>
                     </div>
                 </div>
                 <div class="activity-element">
@@ -192,9 +222,32 @@
                     <div class="activity-element-desc">
                         <h3>Rafting</h3>
                     </div>
+                    <div class="activity-select-button">
+                        <a href="#"> <h3>İncele</h3></a>
+                    </div>
                 </div>
         </div>
     </section>
+    <section class="ad-part">
+        <div class="ad-part-img">
+            <img src="./images/seferma-add-part.png" width="500" alt="">
+        </div>
+        <div class="ad-part-slogan">
+            <h2>Tüm Platformlarda Yayındayız</h2>
+            <p>Seferma mobil uygulaması sayesinde, istediğiniz aracı hızla seçin ve seyhatinizi bir tuşla başlatmanın keyfini çıkarın!
+                 Ayrıca, özel fırsatları kaçırmamak için uygulamamızı hemen indirin!</p>
+            <p>Şimdi uygulamayı indirin ve seyehatinizin tadını çıkarmaya başlayın!</p>
+            <div class="download-links">
+                <a href="#" class="download-google-play">
+                    <img src="./images/googlePlay.png" width="150" alt="">
+                </a>
+                <a href="#" class="download-app-store">
+                    <img src="./images/appStore.png" width="150" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB68nWDZIoHHmkV14XsUYrnFpIId5AiuZI&libraries=places&callback=initMap" async defer></script>
     <script src="script.js"></script>
 </body>
 </html>

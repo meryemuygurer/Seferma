@@ -52,8 +52,8 @@ a{
     padding: 20px 50px;
     position: fixed;
     width: 100%;
-    border-bottom: 1px solid rgb(239, 239, 239);
-    box-shadow: 0 1px 3px rgb(222, 221, 221);
+    border-bottom: 1px solid rgb(227, 227, 227);
+    box-shadow: 0 1px 3px rgb(230, 230, 230);
     transition: 0.6s;
     z-index: 10000;
 }
@@ -71,6 +71,7 @@ a{
 .header-nav li{
     border-radius: 8px;
     background-color: #c90005;
+    transition: 0.6s;
 }
 
 .header-nav li:hover{
@@ -111,19 +112,62 @@ nav .logo img{
 
 .location-search-area{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 50px;
+    padding: 50px 25px;
+    margin: 150px 50px;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 15px;
+    box-shadow: 0 1px 1px rgb(230, 230, 230);
 }
 
-.location-search-div{
+.address-input{
+    display: flex;
+    gap: 100px;
+    padding: 70px 0 ;
+}
+
+.address-input input{
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    width: 200px;
+}
+
+.address-input div{
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 1px solid rgb(227, 227, 227);
+}
+
+.address-input div p{
+    font-size: 19px ;
+    margin-bottom: 10px;
+    color: #e61418;
+}
+
+.address-input input:focus{
+    outline: none;
+}
+
+.travel-selection{
+    display: flex;
+    gap: 100px;
+}
+
+.travel-selection div{
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    width: 100%;
-    height: 500px;
-    background-color: rgb(225, 225, 225);
+    gap: 20px;
+    padding: 10px 20px ;
+    background-color: rgb(237, 234, 234);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.travel-selection span{
+    font-size: 15px;
 }
 
 /* Our Cars Area */
@@ -149,8 +193,9 @@ nav .logo img{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid rgb(175, 175, 175);
+    border: 1px solid rgb(227, 227, 227);
     border-radius: 18px 18px 15px 15px;
+    box-shadow: 0 1px 1px rgb(230, 230, 230);
 }
 
 .our-cars-img{
@@ -192,7 +237,7 @@ nav .logo img{
     align-items: center;
 }
 
-.our-cars-button{
+.select-button{
     background-color: #c90005;
     border-radius: 8px;
     text-align: center;
@@ -202,15 +247,15 @@ nav .logo img{
     transition: 0.6s;
 }
 
-.our-cars-button:hover{
+.select-button:hover{
     background-color: #e61418;
 }
 
-.our-cars-button a{
+.select-button a{
     color: white;
 }
 
-.our-cars-button h3{
+.select-button h3{
     font-weight: 300;
 }
 
@@ -230,22 +275,35 @@ nav .logo img{
 
 .activites-regions-element{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px; /* İki sütun arasındaki boşluk */
+    /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto,1fr;
+    gap: 50px; /* İki sütun arasındaki boşluk */
     padding: 0 50px;
 }
 
 .activity-element{
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(208, 206, 206);
+    border: 1px solid rgb(227, 227, 227);
     border-radius: 16px 16px 15px 15px;
     padding-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgb(230, 230, 230);
+}
+
+.activity-element:hover{
+    transition: 0.6s;
+    box-shadow: -5px 0 10px 0 rgb(230, 230, 230), 10px 0 10px 0 rgb(230, 230, 230), 0 10px 10px 0 rgb(230, 230, 230);
+
 }
 
 .activity-element h3{
-    padding: 10px 5px;
-    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    padding: 7px 0;
 }
 
 .activity-element-img img{
@@ -253,7 +311,27 @@ nav .logo img{
     height: 200px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
-    border-bottom: 2px solid #c90005;
+}
+
+.activity-select-button{
+    background-color: #c90005;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px 20px;
+    padding: 2px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.activity-select-button:hover{
+    background-color: #e61418;
+}
+.activity-select-button a{
+    color: white;
+}
+
+.activity-select-button h3{
+    font-weight: 300;
 }
 
 .regions-option{
@@ -305,4 +383,41 @@ nav .logo img{
 /* Diğer seçeneklerin stilini belirtin */
 #option2, #option3, #option4 {
     color: gray;
+}
+
+.ad-part{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 200px;
+}
+
+.ad-part-slogan p{
+    color: gray;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.download-links{
+    margin-top: 50px;
+    display: flex;
+}
+
+.download-links div{
+    cursor: pointer;
+}
+
+.download-google-play{
+    margin-right:30px ;
+}
+
+.download-google-play, .download-app-store{
+    display: flex;
+    align-items: center;
+}
+
+h2{
+    font-size: 40px;
+    margin-bottom: 30px;
 }
