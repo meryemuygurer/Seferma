@@ -5,6 +5,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+    height: 100vh;
+    background-color: rgb(242, 242, 242);
+}
+
 .row{
     display: flex;
 }
@@ -15,6 +20,11 @@ ul{
 
 a{
     text-decoration: none;
+}
+
+h2{
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 .row > ul, .header-items > ul{
@@ -52,8 +62,6 @@ a{
     padding: 20px 50px;
     position: fixed;
     width: 100%;
-    border-bottom: 1px solid rgb(227, 227, 227);
-    box-shadow: 0 1px 3px rgb(230, 230, 230);
     transition: 0.6s;
     z-index: 10000;
 }
@@ -62,6 +70,8 @@ a{
     padding: 10px 50px;
     top: 0;
     background-color: rgb(246, 246, 246);
+    border-bottom: 1px solid rgb(227, 227, 227);
+    box-shadow: 0 1px 3px rgb(230, 230, 230);
 }
 
 .header-nav ul{
@@ -94,6 +104,24 @@ nav .logo img{
     display: flex;
     justify-content: center;
     padding-top: 200px;
+    
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('./images/car-traveling2.jpeg') center/cover no-repeat;
+    opacity: 0.3; /* 0 ile 1 arasında bir değer */
+    z-index: -1; /* Metinlerden arka planda olması için */
 }
 
 .banner-text{
@@ -102,10 +130,12 @@ nav .logo img{
 
 .banner-text h1{
     font-size: 56px;
+    color: black;
 }
 
 .banner-text h3{
     font-weight: 300;
+    color: black;
 }
 
 /* Location Search Area */
@@ -116,10 +146,13 @@ nav .logo img{
     align-items: center;
     justify-content: center;
     padding: 50px 25px;
-    margin: 150px 50px;
+    margin: 0 50px;
     border: 1px solid rgb(227, 227, 227);
     border-radius: 15px;
     box-shadow: 0 1px 1px rgb(230, 230, 230);
+    position: relative;
+    top: -50px;
+    background-color: white;
 }
 
 .address-input{
@@ -196,6 +229,7 @@ nav .logo img{
     border: 1px solid rgb(227, 227, 227);
     border-radius: 18px 18px 15px 15px;
     box-shadow: 0 1px 1px rgb(230, 230, 230);
+    background-color: white;
 }
 
 .our-cars-img{
@@ -290,6 +324,7 @@ nav .logo img{
     padding-bottom: 10px;
     cursor: pointer;
     box-shadow: 0 1px 1px rgb(230, 230, 230);
+    background-color: white;
 }
 
 .activity-element:hover{
@@ -417,7 +452,128 @@ nav .logo img{
     align-items: center;
 }
 
-h2{
-    font-size: 40px;
+/* FOOTER */
+
+
+.footer-lists{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-lists span{
+    font-weight: 500;
+    color: black;
+}
+
+.footer-lists h2{
+    font-size: 25px;
+    color: #c90005;
+    margin: 15px 0 40px  0 ;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+footer h3{
     margin-bottom: 30px;
+}
+
+footer li{
+    margin-bottom: 12px;
+}
+
+.footer-li-row{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ul-yardim a{
+    margin-top: 50px;
+}
+
+.footer-last-row{
+    text-align: center;
+    padding: 25px 0;
+}
+/* ABOUT US PAGE */
+
+.about-us-our-story{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 250px 0 250px;
+}
+
+.about-us-our-story p{
+    color: rgb(71, 71, 71);
+    line-height: 30px;
+    text-align: center;
+}
+
+.image-deneme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+
+.image-deneme img{
+    border-radius: 15px;
+    border: 2px solid #c90005;
+    z-index: 1;
+}
+
+.image-deneme hr{
+    width: 100%;
+    position: absolute;
+    height: 10px;
+    border-top: 2px solid #c90005;
+}
+
+/* Counter Area */
+
+.counter-area{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    border: 1px solid rgb(227, 227, 227);
+    box-shadow: 0 1px 3px rgb(230, 230, 230);
+    margin: 0 50px 150px 50px;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: white;
+}
+
+.counter-element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.counter{
+    font-size:40px ;
+    color: #c90005;
+}
+
+.counter-h6{
+    font-size: 15px;
+}
+
+.image-deneme2{
+    width: 754px; /* İstediğiniz genişlik değeri */
+    height: 236px; /* İstediğiniz yükseklik değeri */
+    overflow: hidden;
+    align-content: center;
+}
+
+.image-deneme2 img{
+    width: 100%; /* Resmi kapsayıcıya sığdırmak için */
+    height: auto; /* Oranları korumak için */
+    display: block;
 }

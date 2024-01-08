@@ -67,3 +67,30 @@ function initMap() {
 }
 
 
+let nums = document.querySelectorAll('.counter-area .counter');
+let started = false;
+
+window.addEventListener('scroll', function() {
+    if (!started && isElementInViewport('.counter-area')) {
+        nums.forEach((num) => startCount(num));
+        started = true;
+    }
+});
+
+function isElementInViewport(el) {
+    let rect = document.querySelector(el).getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+function startCount(e1) {
+    let goal = e1.dataset.goal;
+    let count = setInterval(() => {
+        e1.textContent++;
+        if (e1.textContent == goal) {
+            clearInterval(count);
+        }
+    }, 5000 / goal);
+}
