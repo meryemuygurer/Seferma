@@ -54,6 +54,24 @@ h2{
     font-weight: 300;
 }
 
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-select{
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 300
+}
+
+.topbar li:hover a{
+    color: black;
+    transition: 0.6s;
+}
 
 .header-nav{
     display: flex;
@@ -74,21 +92,27 @@ h2{
     box-shadow: 0 1px 3px rgb(230, 230, 230);
 }
 
-.header-nav ul{
+.header-items-ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
     gap: 50px;
 }
 
-.header-nav li{
+.header-items-li{
     border-radius: 8px;
     background-color: #c90005;
-    transition: 0.6s;
+    transition: background-color 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header-nav li:hover{
-    background-color: #e61418;
+.header-items-li:hover{
+    background-color: #ee4c4c;
 }
 
-.header-nav a{
+.header-items-li a{
     color: white;
     padding: 8px 14px;
     display: block;
@@ -98,13 +122,55 @@ nav .logo img{
     width: 150px;
 }
 
+.call-ride {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #c90005;
+    text-align: center;
+    font-size: 16px;
+    border: 2px solid #c90005;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: color 0.4s, background-color 0.4s;
+}
+
+/* Butonun iç kısmı */
+.call-ride a {
+    position: relative;
+    z-index: 1;
+    color: #c90005;
+}
+
+.call-ride:hover a{
+    transition: 1s;
+    color: white;
+}
+
+/* Butonun altındaki overlay */
+.call-ride::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 0;
+    transition: transform 0.4s;
+    transform: translateY(-100%);
+}
+
+/* Hover efekti */
+.call-ride:hover::before {
+    transform: translateY(0);
+}
 /* Banner Area */
 
-.banner{
+.main-banner{
     display: flex;
     justify-content: center;
     padding-top: 200px;
-    
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
@@ -112,7 +178,7 @@ nav .logo img{
     position: relative;
 }
 
-.banner::before {
+.main-banner::before {
     content: '';
     position: absolute;
     top: 0;
@@ -122,6 +188,20 @@ nav .logo img{
     background: url('./images/car-traveling2.jpeg') center/cover no-repeat;
     opacity: 0.3; /* 0 ile 1 arasında bir değer */
     z-index: -1; /* Metinlerden arka planda olması için */
+}
+
+.main-banner-text{
+    text-align: center;    
+}
+
+.main-banner-text h1{
+    font-size: 56px;
+    color: black;
+}
+
+.main-banner-text h3{
+    font-weight: 300;
+    color: black;
 }
 
 .banner-text{
@@ -136,6 +216,38 @@ nav .logo img{
 .banner-text h3{
     font-weight: 300;
     color: black;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('./images/banner-img.jpg') center/cover no-repeat;
+    opacity: 0.2; /* 0 ile 1 arasında bir değer */
+    z-index: -1; /* Metinlerden arka planda olması için */
+}
+
+.banner-text h3 a{
+    color: black;
+    font-weight: 500;
+}
+.banner-text h3 a:hover{
+    color: #c90005;
+    transition: 0.6s;
 }
 
 /* Location Search Area */
@@ -155,33 +267,63 @@ nav .logo img{
     background-color: white;
 }
 
-.address-input{
+.address-inputs{
     display: flex;
-    gap: 100px;
-    padding: 70px 0 ;
+    gap: 3%;
+    padding: 60px 0 40px 0 ;
+    justify-content: center;
 }
 
-.address-input input{
+.addressInput{
     border: none;
     background-color: transparent;
     font-size: 15px;
     width: 200px;
 }
 
-.address-input div{
+#menu-2, #menu-3{
+    display: none;
+}
+
+#saatSec{
+    width: 100;
+}
+
+.address-inputs div{
     padding: 10px 20px;
     border-radius: 15px;
     border: 1px solid rgb(227, 227, 227);
 }
 
-.address-input div p{
+.address-inputs div p{
     font-size: 19px ;
     margin-bottom: 10px;
-    color: #e61418;
+    color: #c90005;
 }
 
-.address-input input:focus{
+.address-inputs input:focus{
     outline: none;
+}
+
+.customDatePicker::-webkit-calendar-picker-indicator, .customTimePicker::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+/*
+::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.customDatePicker::-webkit-inner-spin-button {
+    display: none;
+}
+
+.customDatePicker::-webkit-clear-button {
+    display: none;
+}
+*/
+
+#pickDate, #numOfPass{
+    border: none;
 }
 
 .travel-selection{
@@ -197,6 +339,11 @@ nav .logo img{
     background-color: rgb(237, 234, 234);
     border-radius: 8px;
     cursor: pointer;
+}
+
+.travel-option.active{
+    background-color: #d1d1d1;
+    font-weight: bold;
 }
 
 .travel-selection span{
@@ -282,7 +429,7 @@ nav .logo img{
 }
 
 .select-button:hover{
-    background-color: #e61418;
+    background-color: #ee4c4c;
 }
 
 .select-button a{
@@ -359,7 +506,7 @@ nav .logo img{
 }
 
 .activity-select-button:hover{
-    background-color: #e61418;
+    background-color: #ee4c4c;
 }
 .activity-select-button a{
     color: white;
@@ -392,7 +539,7 @@ nav .logo img{
 .regions-option button::after{
     content: "";
     position: absolute;
-    background-color: black;
+    background-color: #c90005;
     height: 1px;
     width: 0;
     left: 0;
@@ -410,21 +557,85 @@ nav .logo img{
     width: 100%;    
 }
 
+#region2, #region3, #region4{
+    display: none;
+}
+
 #option1 {
     color: black;
     font-weight: bold;
 }
 
-/* Diğer seçeneklerin stilini belirtin */
 #option2, #option3, #option4 {
     color: gray;
 }
+
+/* News Part */
+
+.news{
+    display: flex;
+    flex-direction: column;
+}
+
+.news-elements{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 50px;
+    padding: 0 50px;
+    margin-top: 50px;
+}
+/*
+.news-elements{
+    display: flex;
+    border-radius: 15px;
+    height: 400px;
+    text-align: center;
+}
+*/
+
+.new-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-img img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.news-img{
+    margin-bottom: 30px;
+}
+
+.news-header{
+    text-align: center;
+}
+
+.news-header h4{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.news-element a{
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+}
+
+/* Ad Part */
 
 .ad-part{
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 200px;
+    margin-top: 100px;
 }
 
 .ad-part-slogan p{
@@ -454,6 +665,9 @@ nav .logo img{
 
 /* FOOTER */
 
+footer{
+    margin-top: 100px;
+}
 
 .footer-lists{
     display: flex;
@@ -498,6 +712,17 @@ footer li{
     text-align: center;
     padding: 25px 0;
 }
+
+footer a:hover{
+    transition: 0.6s;
+    color: #c90005;
+}
+
+.footer-lists h2:hover{
+    transition: 0.6s;
+    color: black;
+}
+
 /* ABOUT US PAGE */
 
 .about-us-our-story{
@@ -577,3 +802,273 @@ footer li{
     height: auto; /* Oranları korumak için */
     display: block;
 }
+
+/*
+Our Services Area
+*/
+
+.banner-img{
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.services-text{
+    position: absolute;
+    padding-top: 200px;
+}
+
+.services{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 200px;
+}
+  
+.service {
+    position: relative;
+    width: calc(40% - 20px);
+    margin: 20px;
+    overflow: hidden;
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.service:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(149, 0, 0, 0.548);
+    color: #fff;
+    padding: 20px;
+    transition: background-color 0.3s ease, bottom 0.3s ease;
+    text-align: center;
+}
+
+.overlay-content {
+    position: relative; /* Bu içeriğin pozisyonunu ayarlamak için */
+    height: 70px; /* Overlay'in boyutunu içerik boyutuna göre ayarlamak için */
+}
+
+.service:hover .overlay {
+    background-color: rgba(87, 13, 13, 0.8);
+    bottom: 5%;
+}
+
+.service:hover .overlay-content {
+    height: 100%;
+}
+
+.service:hover img{
+    opacity: 0.3;
+}
+
+.overlay h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.overlay p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.service:hover .overlay p {
+    opacity: 1;
+}
+  /*
+  .service:nth-child(odd) .overlay p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .service:nth-child(odd):hover .overlay p {
+    max-height: 100%;
+  }
+  */
+
+  /* REFERENCES PART */
+
+  .references{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0 100px 0;
+  }
+
+  .reference-img img{
+    width: 300px;
+    object-fit: cover;
+    padding: 20px;
+  }
+
+  .reference-img img:hover{
+    box-shadow: 0px 0px 15px 15px #ddd;;
+  }
+
+  /* CONTACT PART */
+
+  .container-box {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-field {
+    padding: 7px;
+    margin: 7px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+    box-shadow: 1px 1px 3px #a1a1a1;
+    width: 350px;
+    max-width: 500px;
+    max-height: 500px;
+    background-color: #d1d1d1;
+}
+
+.input-field:focus {
+    background-color: white;
+}
+
+#btn-submit{
+    width: 45%;
+}
+
+#btn-submit:hover {
+    cursor: pointer;
+    background-color: rgb(107, 218, 107);
+}
+
+#btn-reset{
+    width: 45%;
+}
+
+#btn-reset:hover  {
+    cursor: pointer;
+    background-color: rgb(255, 48, 48);
+}
+
+.contact-form-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.form-text h4{
+    color: #c90005;
+}
+
+/* LOGIN PAGE */
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 50px 50px ;
+    border-radius: 18px;
+    border: 1px solid rgb(160, 160, 160);
+    box-shadow: 0 1px 3px rgb(160, 160, 160);
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    border-bottom: 2px solid black;
+}
+
+.input-box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: 0.5s;
+    font-size: 15px;
+    padding: 0 20px;
+}
+
+.input-box-label{
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.input-box input:focus{
+    border: none;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+    transition: 0.5s;
+}
+
+.btn{
+    margin-bottom: 20px;
+    font-size: 22px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.submit-btn{
+    color: #c90005;
+    border: 1px solid #c90005;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.submit-btn:hover{
+    color: white;
+    background-color: #c90005;
+}
+
+.span-icon{
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.login-register a{
+    color: #c90005;
+    transition: 0.5s;
+}
+
+.login-register a:hover{
+    color: black;
+    transition: 0.5s;
+}
+

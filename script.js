@@ -15,25 +15,31 @@ function selectOption(optionNumber) {
     for (let i = 1; i <= 4; i++) {
         let eleman = document.getElementById('option' + i)
         eleman.querySelector("h3").style.color = 'gray';
+
+        let region = document.getElementById('region' + i)
+        region.style.display= 'none';
     }
 
     // Tıklanan seçeneğin rengini siyah yap
     let eleman2 = document.getElementById('option' + optionNumber)
     eleman2.querySelector("h3").style.color = '#c90005';
+
+    let selectedRegion = document.getElementById('region' + optionNumber)
+    selectedRegion.style.display = 'flex';
 }
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    var tarihInput = document.getElementById("tarihSec");
+    var dateInput = document.getElementById("pickDate");
 
     // Bugünün tarihini al
-    var bugununTarihi = new Date();
+    var todaysDate = new Date();
 
     // Tarihi "YYYY-MM-DD" formatına dönüştür
-    var formatliTarih = getFormattedDate(bugununTarihi);
+    var formatliTarih = getFormattedDate(todaysDate);
 
     // Tarih input'unun değerini güncelle
-    tarihInput.value = formatliTarih;
+    dateInput.value = formatliTarih;
 });
 
 function getFormattedDate(date) {
@@ -48,7 +54,9 @@ function getFormattedDate(date) {
     return year + '-' + month + '-' + day;
 }
 
-var adresInputList = document.querySelectorAll(".adresInput");
+/* MAP SECTION */
+
+var adresInputList = document.querySelectorAll(".addressInput");
 
 function initMap() {
     adresInputList.forEach(function (adresInput) {
@@ -66,6 +74,7 @@ function initMap() {
     });
 }
 
+/* COUNTER SECTION */
 
 let nums = document.querySelectorAll('.counter-area .counter');
 let started = false;
@@ -92,5 +101,58 @@ function startCount(e1) {
         if (e1.textContent == goal) {
             clearInterval(count);
         }
-    }, 5000 / goal);
+    }, 2000 / goal);
+}
+
+function travelSelected(num){
+    let travelElements = document.querySelectorAll('[id^="travel-"]');
+    let menuElements = document.querySelectorAll('[id^="menu-"]');
+    travelElements.forEach(element => {
+        element.classList.remove("active");
+    });
+
+    menuElements.forEach(element => {
+        element.style.display = "none";
+    });
+
+
+    let selected = document.getElementById(`travel-${num}`);
+    let menuElement = document.getElementById(`menu-${num}`);
+    selected.classList.add("active");
+    menuElement.style.display = "flex";
+}
+
+/* REGISTER PART */
+
+var map;
+
+function initMap() {
+    var directionsService = new google.maps.DirectionsService();
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 41.0082, lng: 28.9784}, // Başlangıç konumu (örnek olarak İstanbul)
+        zoom: 8
+    });
+    directionsRenderer.setMap(map);
+
+    // Kullanıcıların girdiği konumları alın
+    var start = {lat: parseFloat(prompt("Başlangıç noktası enlem:")), lng: parseFloat(prompt("Başlangıç noktası boylam:"))};
+    var end = {lat: parseFloat(prompt("Bitiş noktası enlem:")), lng: parseFloat(prompt("Bitiş noktası boylam:"))};
+
+    // Directions API'yi kullanarak en kısa yolu bulun
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: 'DRIVING'
+    };
+    directionsService.route(request, function(result, status) {
+        if (status == 'OK') {
+            directionsRenderer.setDirections(result);
+            // Mesafe bilgisini alın
+            var distance = result.routes[0].legs[0].distance.text;
+            alert("Mesafe: " + distance);
+        } else {
+            window.alert('Yol bilgileri alınamadı: ' + status);
+        }
+    });
 }
