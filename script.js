@@ -9,9 +9,7 @@ window.onload = function () {
     selectOption(1);
 };
 
-// Seçenekleri değiştiren JavaScript fonksiyonu
 function selectOption(optionNumber) {
-    // Tüm seçeneklerin rengini gri yap
     for (let i = 1; i <= 4; i++) {
         let eleman = document.getElementById('option' + i)
         eleman.querySelector("h3").style.color = 'gray';
@@ -20,7 +18,6 @@ function selectOption(optionNumber) {
         region.style.display= 'none';
     }
 
-    // Tıklanan seçeneğin rengini siyah yap
     let eleman2 = document.getElementById('option' + optionNumber)
     eleman2.querySelector("h3").style.color = '#c90005';
 
@@ -32,13 +29,10 @@ function selectOption(optionNumber) {
 document.addEventListener('DOMContentLoaded', function() {
     var dateInput = document.getElementById("pickDate");
 
-    // Bugünün tarihini al
     var todaysDate = new Date();
 
-    // Tarihi "YYYY-MM-DD" formatına dönüştür
     var formatliTarih = getFormattedDate(todaysDate);
 
-    // Tarih input'unun değerini güncelle
     dateInput.value = formatliTarih;
 });
 
@@ -66,7 +60,6 @@ function initMap() {
             var place = autocomplete.getPlace();
             if (place.geometry) {
                 console.log(adresInput.id + ' için Seçilen Adres:', place.formatted_address);
-                // İstediğiniz başka işlemleri burada yapabilirsiniz
             } else {
                 console.error(adresInput.id + ' için geçerli bir adres seçilmedi.');
             }
@@ -135,11 +128,9 @@ function initMap() {
     });
     directionsRenderer.setMap(map);
 
-    // Kullanıcıların girdiği konumları alın
     var start = {lat: parseFloat(prompt("Başlangıç noktası enlem:")), lng: parseFloat(prompt("Başlangıç noktası boylam:"))};
     var end = {lat: parseFloat(prompt("Bitiş noktası enlem:")), lng: parseFloat(prompt("Bitiş noktası boylam:"))};
 
-    // Directions API'yi kullanarak en kısa yolu bulun
     var request = {
         origin: start,
         destination: end,
@@ -148,7 +139,6 @@ function initMap() {
     directionsService.route(request, function(result, status) {
         if (status == 'OK') {
             directionsRenderer.setDirections(result);
-            // Mesafe bilgisini alın
             var distance = result.routes[0].legs[0].distance.text;
             alert("Mesafe: " + distance);
         } else {
